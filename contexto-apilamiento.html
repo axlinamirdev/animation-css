@@ -326,13 +326,13 @@
 
 	    .container-contador{
 	    	display: flex;
-		    flex-direction: column;
+		    flex-direction: row;
 		    align-items: center;
 		    justify-content: center;
 	    }
 
 	    .container-contador h1{
-	    	width: 250px;
+	    	width: 192px;
 	    	margin-bottom: 0;
 	    }
 
@@ -342,6 +342,7 @@
 
 	    .container-contador .score{
 	    	margin:0;
+	    	text-align: center;
 	    }
 
 	    .cloud-left{
@@ -395,18 +396,47 @@
 	    	transform: rotate(160deg);
 	    }
 
-	    .sol{
+	    .clouds-container{
+			padding: 50px 0 0 0;
+			align-self: flex-start;
+		}
+		
+		.clouds {
+			width: 100px; 
+			height: 30px;
+			background: #fff;
+			border-radius: 200px;		
+			position: relative; 
+		}
+	   	
+	   	.clouds:before, .clouds:after {
+			content: '';
+			position: absolute; 
+			background: #fff;
+			width: 50px; 
+			height: 50px;
+			position: absolute; 
+			top: -15px; 
+			left: 10px;
+			
+			border-radius: 100px;
+			transform: rotate(30deg);
+		}
+
+		.sol{
 	    	width: 40px;
 		    height: 40px;
 		    border-radius: 50%;
 		    background: yellow;
 		    box-shadow: 0 7px 30px rgb(255 255 0);
-		    align-self: flex-end;
-		    margin-right: 36px;
-		    margin-top: 10px;
+		    position: absolute;
+		    top: 24px;
+		    left: 49px;
 		}
 
-
+		.container-score{
+			margin-top: 45px;
+		}
 	</style>
 </head>
 <body>
@@ -485,13 +515,18 @@
 			<div class="cloud-right position-cloud"></div>
 		</div>
 		<div class="container-contador">
-			<div class="sol"></div>
-			<h1 class="title">
-		      <img
-		          src="https://i.ibb.co/J3Kn71r/cbd152ddb203fe23ad78261749534e7d.png"
-		          alt="Animationland">
-		    </h1>
-			<h2 class="score">Score: </h2>
+			<div class="clouds-container">
+				<div class="sol"></div>
+				<div class="clouds"></div>
+			</div>
+			<div class="container-score">
+				<h1 class="title">
+			      <img
+			          src="https://i.ibb.co/J3Kn71r/cbd152ddb203fe23ad78261749534e7d.png"
+			          alt="Animationland">
+			    </h1>
+				<h2 class="score">Score: </h2>
+			</div>
 		</div>
 </body>
 </html>
